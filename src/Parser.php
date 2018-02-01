@@ -1,20 +1,20 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser;
+namespace Maverickslab\Utilities\Parser;
 
-use Nathanmac\Utilities\Parser\Formats\BSON;
-use Nathanmac\Utilities\Parser\Formats\FormatInterface;
-use Nathanmac\Utilities\Parser\Formats\JSON;
-use Nathanmac\Utilities\Parser\Formats\MSGPack;
-use Nathanmac\Utilities\Parser\Formats\QueryStr;
-use Nathanmac\Utilities\Parser\Formats\Serialize;
-use Nathanmac\Utilities\Parser\Formats\XML;
-use Nathanmac\Utilities\Parser\Formats\YAML;
+use Maverickslab\Utilities\Parser\Formats\BSON;
+use Maverickslab\Utilities\Parser\Formats\FormatInterface;
+use Maverickslab\Utilities\Parser\Formats\JSON;
+use Maverickslab\Utilities\Parser\Formats\MSGPack;
+use Maverickslab\Utilities\Parser\Formats\QueryStr;
+use Maverickslab\Utilities\Parser\Formats\Serialize;
+use Maverickslab\Utilities\Parser\Formats\XML;
+use Maverickslab\Utilities\Parser\Formats\YAML;
 
 /**
  * Parser Library, designed to parse payload data from various formats to php array.
  *
- * @package    Nathanmac\Utilities\Parser
+ * @package    Maverickslab\Utilities\Parser
  * @author     Nathan Macnamara <nathan.macnamara@outlook.com>
  * @license    https://github.com/nathanmac/Parser/blob/master/LICENSE.md  MIT
  */
@@ -30,34 +30,34 @@ class Parser
      */
     private $supported_formats = [
       // XML
-        'application/xml' => 'Nathanmac\Utilities\Parser\Formats\XML',
-        'text/xml'        => 'Nathanmac\Utilities\Parser\Formats\XML',
-        'xml'             => 'Nathanmac\Utilities\Parser\Formats\XML',
+        'application/xml' => 'Maverickslab\Utilities\Parser\Formats\XML',
+        'text/xml'        => 'Maverickslab\Utilities\Parser\Formats\XML',
+        'xml'             => 'Maverickslab\Utilities\Parser\Formats\XML',
       // JSON
-        'application/json'         => 'Nathanmac\Utilities\Parser\Formats\JSON',
-        'application/x-javascript' => 'Nathanmac\Utilities\Parser\Formats\JSON',
-        'text/javascript'          => 'Nathanmac\Utilities\Parser\Formats\JSON',
-        'text/x-javascript'        => 'Nathanmac\Utilities\Parser\Formats\JSON',
-        'text/x-json'              => 'Nathanmac\Utilities\Parser\Formats\JSON',
-        'json'                     => 'Nathanmac\Utilities\Parser\Formats\JSON',
+        'application/json'         => 'Maverickslab\Utilities\Parser\Formats\JSON',
+        'application/x-javascript' => 'Maverickslab\Utilities\Parser\Formats\JSON',
+        'text/javascript'          => 'Maverickslab\Utilities\Parser\Formats\JSON',
+        'text/x-javascript'        => 'Maverickslab\Utilities\Parser\Formats\JSON',
+        'text/x-json'              => 'Maverickslab\Utilities\Parser\Formats\JSON',
+        'json'                     => 'Maverickslab\Utilities\Parser\Formats\JSON',
       // BSON
-        'application/bson' => 'Nathanmac\Utilities\Parser\Formats\BSON',
-        'bson'             => 'Nathanmac\Utilities\Parser\Formats\BSON',
+        'application/bson' => 'Maverickslab\Utilities\Parser\Formats\BSON',
+        'bson'             => 'Maverickslab\Utilities\Parser\Formats\BSON',
       // YAML
-        'text/yaml'          => 'Nathanmac\Utilities\Parser\Formats\YAML',
-        'text/x-yaml'        => 'Nathanmac\Utilities\Parser\Formats\YAML',
-        'application/yaml'   => 'Nathanmac\Utilities\Parser\Formats\YAML',
-        'application/x-yaml' => 'Nathanmac\Utilities\Parser\Formats\YAML',
-        'yaml'               => 'Nathanmac\Utilities\Parser\Formats\YAML',
+        'text/yaml'          => 'Maverickslab\Utilities\Parser\Formats\YAML',
+        'text/x-yaml'        => 'Maverickslab\Utilities\Parser\Formats\YAML',
+        'application/yaml'   => 'Maverickslab\Utilities\Parser\Formats\YAML',
+        'application/x-yaml' => 'Maverickslab\Utilities\Parser\Formats\YAML',
+        'yaml'               => 'Maverickslab\Utilities\Parser\Formats\YAML',
       // MSGPACK
-        'application/msgpack'   => 'Nathanmac\Utilities\Parser\Formats\MSGPack',
-        'application/x-msgpack' => 'Nathanmac\Utilities\Parser\Formats\MSGPack',
-        'msgpack'               => 'Nathanmac\Utilities\Parser\Formats\MSGPack',
+        'application/msgpack'   => 'Maverickslab\Utilities\Parser\Formats\MSGPack',
+        'application/x-msgpack' => 'Maverickslab\Utilities\Parser\Formats\MSGPack',
+        'msgpack'               => 'Maverickslab\Utilities\Parser\Formats\MSGPack',
       // MISC
-        'application/vnd.php.serialized'    => 'Nathanmac\Utilities\Parser\Formats\Serialize',
-        'serialize'                         => 'Nathanmac\Utilities\Parser\Formats\Serialize',
-        'application/x-www-form-urlencoded' => 'Nathanmac\Utilities\Parser\Formats\QueryStr',
-        'querystr'                          => 'Nathanmac\Utilities\Parser\Formats\QueryStr',
+        'application/vnd.php.serialized'    => 'Maverickslab\Utilities\Parser\Formats\Serialize',
+        'serialize'                         => 'Maverickslab\Utilities\Parser\Formats\Serialize',
+        'application/x-www-form-urlencoded' => 'Maverickslab\Utilities\Parser\Formats\QueryStr',
+        'querystr'                          => 'Maverickslab\Utilities\Parser\Formats\QueryStr',
     ];
 
     /* ------------ Access Methods/Helpers ------------ */
@@ -216,7 +216,7 @@ class Parser
             }
         }
 
-        return 'Nathanmac\Utilities\Parser\Formats\JSON';
+        return 'Maverickslab\Utilities\Parser\Formats\JSON';
     }
 
     /**
@@ -280,8 +280,8 @@ class Parser
         if ( ! class_exists($class)) {
             throw new \InvalidArgumentException("Parser formatter class {$class} not found.");
         }
-        if ( ! is_a($class, 'Nathanmac\Utilities\Parser\Formats\FormatInterface', true)) {
-            throw new \InvalidArgumentException('Parser formatters must implement the Nathanmac\Utilities\Parser\Formats\FormatInterface interface.');
+        if ( ! is_a($class, 'Maverickslab\Utilities\Parser\Formats\FormatInterface', true)) {
+            throw new \InvalidArgumentException('Parser formatters must implement the Maverickslab\Utilities\Parser\Formats\FormatInterface interface.');
         }
 
         $this->supported_formats[$format] = $class;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser\Tests;
+namespace Maverickslab\Utilities\Parser\Tests;
 
 use \Mockery as m;
-use Nathanmac\Utilities\Parser\Parser;
+use Maverickslab\Utilities\Parser\Parser;
 
 class ParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function mask_payload()
     {
-        $parser = m::mock('Nathanmac\Utilities\Parser\Parser')
+        $parser = m::mock('Maverickslab\Utilities\Parser\Parser')
             ->shouldDeferMissing()
             ->shouldAllowMockingProtectedMethods();
 
@@ -33,7 +33,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function wildcards_with_simple_structure_json()
     {
-        $parser = m::mock('Nathanmac\Utilities\Parser\Parser')
+        $parser = m::mock('Maverickslab\Utilities\Parser\Parser')
             ->shouldDeferMissing()
             ->shouldAllowMockingProtectedMethods();
 
@@ -61,7 +61,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function wildcards_with_array_structure_json()
     {
-        $parser = m::mock('Nathanmac\Utilities\Parser\Parser')
+        $parser = m::mock('Maverickslab\Utilities\Parser\Parser')
             ->shouldDeferMissing()
             ->shouldAllowMockingProtectedMethods();
 

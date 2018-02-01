@@ -1,13 +1,13 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser;
+namespace Maverickslab\Utilities\Parser;
 
 use Illuminate\Support\ServiceProvider;
 
 /**
  * ParserServiceProvider, supporting Laravel implementations.
  *
- * @package    Nathanmac\Utilities\Parser
+ * @package    Maverickslab\Utilities\Parser
  * @author     Nathan Macnamara <nathan.macnamara@outlook.com>
  * @license    https://github.com/nathanmac/Parser/blob/master/LICENSE.md  MIT
  */

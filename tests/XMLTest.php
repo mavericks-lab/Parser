@@ -1,9 +1,9 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser\Tests;
+namespace Maverickslab\Utilities\Parser\Tests;
 
 use \Mockery as m;
-use Nathanmac\Utilities\Parser\Parser;
+use Maverickslab\Utilities\Parser\Parser;
 
 class XMLTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ class XMLTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function null_values_for_empty_values()
     {
-        $parser = m::mock('Nathanmac\Utilities\Parser\Parser')
+        $parser = m::mock('Maverickslab\Utilities\Parser\Parser')
             ->shouldDeferMissing()
             ->shouldAllowMockingProtectedMethods();
 
@@ -32,7 +32,7 @@ class XMLTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function array_structured_getPayload_xml()
     {
-        $parser = m::mock('Nathanmac\Utilities\Parser\Parser')
+        $parser = m::mock('Maverickslab\Utilities\Parser\Parser')
             ->shouldDeferMissing()
             ->shouldAllowMockingProtectedMethods();
 

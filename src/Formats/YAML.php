@@ -1,14 +1,14 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser\Formats;
+namespace Maverickslab\Utilities\Parser\Formats;
 
-use Nathanmac\Utilities\Parser\Exceptions\ParserException;
+use Maverickslab\Utilities\Parser\Exceptions\ParserException;
 use Symfony\Component\Yaml\Yaml as SFYaml;
 
 /**
  * YAML Formatter
  *
- * @package    Nathanmac\Utilities\Parser\Formats
+ * @package    Maverickslab\Utilities\Parser\Formats
  * @author     Nathan Macnamara <nathan.macnamara@outlook.com>
  * @license    https://github.com/nathanmac/Parser/blob/master/LICENSE.md  MIT
  */

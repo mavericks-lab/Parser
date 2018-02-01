@@ -36,7 +36,7 @@ Include the service provider within `app/config/app.php`.
 ```php
 'providers' => [
     '...',
-    'Nathanmac\Utilities\Parser\ParserServiceProvider'
+    'Maverickslab\Utilities\Parser\ParserServiceProvider'
 ];
 ```
 
@@ -45,7 +45,7 @@ And, for convenience, add a facade alias to this same file at the bottom:
 ```php
 'aliases' => [
     '...',
-    'Parser' => 'Nathanmac\Utilities\Parser\Facades\Parser',
+    'Parser' => 'Maverickslab\Utilities\Parser\Facades\Parser',
 ];
 ```
 
@@ -56,7 +56,7 @@ If you are a Lumen user, then there is a service provider that you can make use 
 ```php
 // bootstrap/app.php
 
-$app->register('Nathanmac\Utilities\Parser\ParserServiceProvider');
+$app->register('Maverickslab\Utilities\Parser\ParserServiceProvider');
 ```
 
 Lumen users can also add the facade alias.
@@ -64,7 +64,7 @@ Lumen users can also add the facade alias.
 ```php
 // bootstrap/app.php
 
-class_alias('Nathanmac\Utilities\Parser\Facades\Parser', 'Parser');
+class_alias('Maverickslab\Utilities\Parser\Facades\Parser', 'Parser');
 ```
 
 #### Using the Facade
@@ -283,7 +283,7 @@ Custom Parsers/Formatters
 You can make your own custom parsers/formatters by implementing [FormatInterface](https://github.com/nathanmac/Parser/blob/master/src/Formats/FormatInterface.php), the below example demostrates the use of a custom parser/formatter.
 
 ```php
-use Nathanmac\Utilities\Parser\Formats\FormatInterface;
+use Maverickslab\Utilities\Parser\Formats\FormatInterface;
 
 /**
  * Custom Formatter

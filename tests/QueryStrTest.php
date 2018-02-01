@@ -1,9 +1,9 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser\Tests;
+namespace Maverickslab\Utilities\Parser\Tests;
 
 use \Mockery as m;
-use Nathanmac\Utilities\Parser\Parser;
+use Maverickslab\Utilities\Parser\Parser;
 
 class QueryStrTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,13 +18,13 @@ class QueryStrTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function parse_auto_detect_query_string_data()
     {
-        $parser = m::mock('Nathanmac\Utilities\Parser\Parser')
+        $parser = m::mock('Maverickslab\Utilities\Parser\Parser')
             ->shouldDeferMissing()
             ->shouldAllowMockingProtectedMethods();
 
         $parser->shouldReceive('getFormatClass')
             ->once()
-            ->andReturn('Nathanmac\Utilities\Parser\Formats\QueryStr');
+            ->andReturn('Maverickslab\Utilities\Parser\Formats\QueryStr');
 
         $parser->shouldReceive('getPayload')
             ->once()
@@ -53,7 +53,7 @@ class QueryStrTest extends \PHPUnit_Framework_TestCase
         $parser = new Parser();
 
         $_SERVER['HTTP_CONTENT_TYPE'] = "application/x-www-form-urlencoded";
-        $this->assertEquals('Nathanmac\Utilities\Parser\Formats\QueryStr', $parser->getFormatClass());
+        $this->assertEquals('Maverickslab\Utilities\Parser\Formats\QueryStr', $parser->getFormatClass());
 
         unset($_SERVER['HTTP_CONTENT_TYPE']);
     }

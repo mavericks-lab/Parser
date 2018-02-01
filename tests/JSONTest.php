@@ -1,9 +1,9 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser\Tests;
+namespace Maverickslab\Utilities\Parser\Tests;
 
 use \Mockery as m;
-use Nathanmac\Utilities\Parser\Parser;
+use Maverickslab\Utilities\Parser\Parser;
 
 class JSONTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,19 +18,19 @@ class JSONTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function parse_auto_detect_json_data()
     {
-        $parser = m::mock('Nathanmac\Utilities\Parser\Parser')
+        $parser = m::mock('Maverickslab\Utilities\Parser\Parser')
             ->shouldDeferMissing()
             ->shouldAllowMockingProtectedMethods();
 
         $parser->shouldReceive('getFormatClass')
             ->twice()
-            ->andReturn('Nathanmac\Utilities\Parser\Formats\JSON');
+            ->andReturn('Maverickslab\Utilities\Parser\Formats\JSON');
 
         $parser->shouldReceive('getPayload')
             ->once()
             ->andReturn('{"status":123, "message":"hello world"}');
 
-        $this->assertEquals('Nathanmac\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
+        $this->assertEquals('Maverickslab\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
         $this->assertEquals(['status' => 123, 'message' => 'hello world'], $parser->payload());
     }
 
@@ -62,19 +62,19 @@ class JSONTest extends \PHPUnit_Framework_TestCase
         $parser = new Parser();
 
         $_SERVER['HTTP_CONTENT_TYPE'] = "application/json";
-        $this->assertEquals('Nathanmac\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
+        $this->assertEquals('Maverickslab\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
 
         $_SERVER['HTTP_CONTENT_TYPE'] = "application/x-javascript";
-        $this->assertEquals('Nathanmac\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
+        $this->assertEquals('Maverickslab\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
 
         $_SERVER['HTTP_CONTENT_TYPE'] = "text/javascript";
-        $this->assertEquals('Nathanmac\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
+        $this->assertEquals('Maverickslab\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
 
         $_SERVER['HTTP_CONTENT_TYPE'] = "text/x-javascript";
-        $this->assertEquals('Nathanmac\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
+        $this->assertEquals('Maverickslab\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
 
         $_SERVER['HTTP_CONTENT_TYPE'] = "text/x-json";
-        $this->assertEquals('Nathanmac\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
+        $this->assertEquals('Maverickslab\Utilities\Parser\Formats\JSON', $parser->getFormatClass());
 
         unset($_SERVER['HTTP_CONTENT_TYPE']);
     }

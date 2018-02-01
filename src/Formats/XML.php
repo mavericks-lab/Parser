@@ -1,8 +1,8 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser\Formats;
+namespace Maverickslab\Utilities\Parser\Formats;
 
-use Nathanmac\Utilities\Parser\Exceptions\ParserException;
+use Maverickslab\Utilities\Parser\Exceptions\ParserException;
 
 /**
  * XML Formatter

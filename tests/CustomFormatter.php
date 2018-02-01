@@ -1,8 +1,8 @@
 <?php
 
-namespace Nathanmac\Utilities\Parser\Tests;
+namespace Maverickslab\Utilities\Parser\Tests;
 
-use Nathanmac\Utilities\Parser\Formats\FormatInterface;
+use Maverickslab\Utilities\Parser\Formats\FormatInterface;
 
 /**
  * Custom Formatter

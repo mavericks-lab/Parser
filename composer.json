@@ -1,5 +1,5 @@
 {
-    "name": "nathanmac/parser",
+    "name": "maverickslab/parser",
     "description": "Simple PHP Parser Utility Library for API Development",
     "keywords": [
       "parser",
@@ -7,12 +7,11 @@
       "xml",
       "API"
     ],
-    "homepage": "https://github.com/nathanmac/Parser",
     "license": "MIT",
     "authors": [
         {
-            "name": "Nathan Macnamara",
-            "email": "hola@nathanmac.com"
+            "name": "Mavericks Lab",
+            "email": "info@maverickstechnologies.com"
         }
     ],
     "require": {
@@ -27,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Nathanmac\\Utilities\\Parser\\": "src/"
+            "Maverickslab\\Utilities\\Parser\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Nathanmac\\Utilities\\Parser\\Test\\": "tests/"
+            "Maverickslab\\Utilities\\Parser\\Test\\": "tests/"
         }
     },
     "scripts": {
